@@ -7,7 +7,7 @@
 *
 * Return:  (Success)
 */
-nt main(void)
+int main(void)
 {
 	unsigned long int i;
 	unsigned long int bef = 1;
@@ -24,6 +24,7 @@ nt main(void)
 	{
 		printf(", %lu", aft);
 		aft += bef;
+		bef = aft - bef;
 	}
 	bef1 = (bef / l);
 	bef2 = (bef % l);
