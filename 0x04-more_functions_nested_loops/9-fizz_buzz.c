@@ -2,7 +2,7 @@
 /**
 * main - entry point
 *
-* Return: zrro
+* Return: zero
 */
 int main(void)
 {
@@ -33,4 +33,6 @@ int main(void)
 		printf(" ");
 	}
 	printf("\n");
+	return (0);
+
 }
