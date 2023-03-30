@@ -14,7 +14,7 @@ char *ptr;
 
 printf("%s\n", s1);
 printf("%s", s2);
-ptr = _strncat(s1, s2, 1);
+ptr = _strncat(s1, s2, 3);
 printf("%s\n", s1);
 printf("%s", s2);
 printf("%s\n", ptr);
