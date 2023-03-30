@@ -2,7 +2,7 @@
 /**
 * reverse_array - entry
 * @a: first integer
-* @b: second int
+* @n: space
 * Return: revrese array
 */
 void reverse_array(int *a, int n)
