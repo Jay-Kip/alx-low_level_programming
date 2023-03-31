@@ -4,17 +4,19 @@
 * @n: int
 * Return: zero
 */
-int print_number(int n)
+void print_number(int n)
 {
-	int i = n;
+	unsigned int n1;
 
-	while (i != '\0')
+	n1 = n;
+	if (n < 0)
 	{
-		if (i >= 0 && i <= 1000 && i <= -1000)
-		{
-			i = i;
-		}
-		i++;
+		_putchar('-');
+		n1 = -n;
 	}
-	return (i);
+	if (n1 / 10 != 0)
+	{
+		print_number(n1 / 10);
+	}
+	_putchar((n1 % 10) + '0');
 }
