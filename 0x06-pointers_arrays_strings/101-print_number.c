@@ -10,7 +10,7 @@ int print_number(int n)
 
 	while (i != '\0')
 	{
-		if (i >= 0 && i <= 1000)
+		if (i >= 0 && i <= 1000 && i <= -1000)
 		{
 			i = i;
 		}
