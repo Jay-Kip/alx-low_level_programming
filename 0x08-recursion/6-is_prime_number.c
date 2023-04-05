@@ -9,7 +9,7 @@ int func(int n, int a);
 
 int is_prime_number(int n)
 {
-	return func(n, 1);
+	return (func(n, 1));
 
 
 }
