@@ -2,6 +2,7 @@
 /**
 * is_prime_number - entry point of is prime function
 * @n: incoming integer
+* @a: itarating number
 * Return: 1 if prime and 0 if not prime
 */
 
