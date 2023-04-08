@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
 * main - main function
-* @i: arguement count
-* @j: arguement vector
+* @argc: arguement count
+* @argv: arguement vector
 * Return: zero
 */
 int main(int argc, char *argv[])
