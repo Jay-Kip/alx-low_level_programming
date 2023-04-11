@@ -1,1 +1,1 @@
-Malloc function used to allocate memory to a proggramme
+Malloc Anf Free functions used to allocate memory to a proggramme
