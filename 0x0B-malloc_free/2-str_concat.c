@@ -4,7 +4,7 @@
 * str_concat - function to concatinate two strings
 * @s1: first string
 * @s2: second string
-* Retirn: pointer to to newly allocated space in memory
+* Return: pointer to to newly allocated space in memory
 */
 char *str_concat(char *s1, char *s2)
 {
