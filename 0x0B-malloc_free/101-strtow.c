@@ -74,8 +74,8 @@ f = 0;
 else if (f == 0)
 {
 f = 1;
-}
 w++;
+}
 }
 return (w);
 }
