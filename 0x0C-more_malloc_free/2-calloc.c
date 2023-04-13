@@ -5,8 +5,12 @@
 * @nmemb: number of elements
 * @size: number of bytes
 * Return: pointer to memory location
+* @m: memory area to be filled
+* @b: char to copy
+* @n: number of times to copy
+* _memcon - fills memory
 */
-char *_memcon(char *s, char b, unsigned int n);
+char *_memcon(char *m, char b, unsigned int n);
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *p;
@@ -15,7 +19,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	p = malloc(size * nmemb);
-	
+
 	if (p == NULL)
 		return (NULL);
 
@@ -25,7 +29,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 }
 
 /**
-* memcon - fills memory with a cinstatnt byte
+* _memcon - fills memory with a cinstatnt byte
 * @m: memory area to be filled
 * @b: char to copy
 * @n: number of times to copy
