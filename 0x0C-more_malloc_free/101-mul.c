@@ -9,13 +9,13 @@
 */
 int check(char *s)
 {
-	int i = 0;
+	int j = 0;
 
-	while (s[i])
+	while (s[j])
 	{
-		if (s[i] < '0' || s[i] > '9')
+		if (s[j] < '0' || s[j] > '9')
 			return (0);
-		i++;
+		j++;
 	}
 	return (1);
 }
@@ -26,13 +26,13 @@ int check(char *s)
 */
 int _len(char *s)
 {
-	int i = 0;
+	int k = 0;
 
-	while (s[i] != '\0')
+	while (s[k] != '\0')
 	{
-		i++;
+		k++;
 	}
-	return (0);
+	return (k);
 }
 /**
 * err - error handler
@@ -51,43 +51,43 @@ void err(void)
 int main(int argc, char *argv[])
 {
 	char *a, *b;
-	int len1, len2, len, i, carry, digit1, digit2, *result, d = 0;
+	int fl, ll, len, i, carry, d1, d2, *res, d = 0;
 
 	a = argv[1], b = argv[2];
 	if (argc != 3 || !check(a) || !check(b))
 		err();
-	len1 = _len(a);
-	len2 = _len(b);
-	len = len1 + len2 + 1;
-	result = malloc(sizeof(int) * len);
-	if (!result)
+	fl = _len(a);
+	ll = _len(b);
+	len = fl + ll + 1;
+	res = malloc(sizeof(int) * len);
+	if (!res)
 		return (1);
-	for (i = 0; i <= len1 + len2; i++)
-		result[i] = 0;
-	for (len1 = len1 - 1; len1 >= 0; len1--)
+	for (i = 0; i <= fl + ll; i++)
+		res[i] = 0;
+	for (fl = fl - 1; fl >= 0; fl--)
 	{
-		digit1 = a[len1] - '0';
+		d1 = a[fl] - '0';
 		carry = 0;
-		for (len2 = _len(b) - 1; len2 >= 0; len2--)
+		for (ll = _len(b) - 1; ll >= 0; ll--)
 		{
-			digit2 = b[len2] - '0';
-			carry += result[len1 + len2 + 1] + (digit1 * digit2);
-			result[len1 + len2 + 1] = carry % 10;
+			d2 = b[ll] - '0';
+			carry += res[fl + ll + 1] + (d1 * d2);
+			res[fl + ll + 1] = carry % 10;
 			carry /= 10;
 		}
 		if (carry > 0)
-			result[len1 + len2 + 1] += carry;
+			res[fl + ll + 1] += carry;
 	}
 	for (i = 0; i < len - 1; i++)
 	{
-		if (result[i])
+		if (res[i])
 			d = 1;
 		if (d)
-			_putchar(result[i] + '0');
+			_putchar(res[i] + '0');
 	}
 	if (!d)
 		_putchar('0');
 	_putchar('\n');
-	free(result);
+	free(res);
 	return (0);
 }
