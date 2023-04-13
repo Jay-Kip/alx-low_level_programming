@@ -2,8 +2,6 @@
 #include <stdlib.h>
 /**
 * _calloc - function to allocate memory for an array
-* @nmemb: number of elements
-* @size: number of bytes
 * Return: pointer to memory location
 * @m: memory area to be filled
 * @b: char to copy
