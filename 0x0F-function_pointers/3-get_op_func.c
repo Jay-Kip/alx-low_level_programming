@@ -8,12 +8,13 @@
 */
 int (*get_op_func(char *s))(int, int)
 {
-	oper ops[] = {{"+", op_add},
+	oper ops[] = {
+		{"+", op_add},
 		{"-", op_sub},
 		{"*", op_mul},
 		{"/", op_div},
 		{"%", op_mod},
-		{NULL, NULL}};
+		{NULL, NULL},};
 
 	int i = 0;
 
