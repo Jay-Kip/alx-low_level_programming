@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < b; i++)
 	{
-		if (i == b - 1)
+		if (i == (b - 1))
 		{
 			printf("%02hhx\n", A[i]);
 			break;
