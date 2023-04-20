@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-/*
+/**
 * print_strings - Prints strings, followed by a new line.
 * @separator: string separatingnstrings
 * @n: number of strings passed
