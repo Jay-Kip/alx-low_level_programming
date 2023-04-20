@@ -3,7 +3,7 @@
 #include <stdio.h>
 /**
 * print_numbers - function to print numbers
-* @separetor: string to separate the numbers
+* @separator: string to separate the numbers
 * @n: number of numbers passes
 * @...: number of numbers to be passed
 */
