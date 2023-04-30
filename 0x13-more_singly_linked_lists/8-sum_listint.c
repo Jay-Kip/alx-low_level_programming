@@ -6,7 +6,7 @@
 */
 int sum_listint(listint_t *head)
 {
-	int n:
+	int n;
 	listint_t *node = head;
 
 	n = 0;
