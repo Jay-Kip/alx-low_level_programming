@@ -5,8 +5,7 @@
 */
 void print_binary(unsigned long int n)
 {
-	int i = 0;
-	int j = 0;
+	int i, j = 0;
 	unsigned long int c;
 
 	for (i = 63; i >= 0; i--)
