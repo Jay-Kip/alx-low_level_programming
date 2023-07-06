@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * get_endless - function to check endlessness(if a machine is big or small)
+ * get_endianness - function to check endlessness(if a machine is big or small)
  * Return: 0 for big machine 1 for small machine
  */
 
