@@ -73,7 +73,7 @@ char *create_b(char *file)
 }
 /**
  * * close_f - function to close file
- * @fd: file descriptor to be closed
+ * @dk: file descriptor to be closed
  */
 
 
