@@ -12,8 +12,8 @@ char *create_b(char *file);
 
 int main(int argc, char *argv[])
 {
-	int f, t, b, m;
-	char *a;
+	int from, to, r, w;
+	char *buffer;
 
 	if (argc != 3)
 	{
@@ -21,33 +21,33 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	a = create_b(argv[2]);
-	f = open(argv[1], O_RDONLY);
-	b = read(f, a, 1024);
-	t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	buffer = create_b(argv[2]);
+	from = open(argv[1], O_RDONLY);
+	r = read(from, buffer, 1024);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (f == -1 || b == -1)
+		if (from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			free(a);
+			free(buffer);
 			exit(98);
 		}
-		m = write(t, a, b);
-		if (t == -1 || m == -1)
+		w = write(to, buffer, r);
+		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Cant write to %s\n", argv[2]);
-			free(a);
+			free(buffer);
 			exit(99);
 		}
 
-		b = read(f, a, 1024);
-		t = open(argv[2], O_WRONLY | O_APPEND);
-	} while (b > 0);
+		r = read(from, buffer, 1024);
+		to = open(argv[2], O_WRONLY | O_APPEND);
+	} while (r > 0);
 
-	free(a);
-	close_f(f);
-	close_f(t);
+	free(buffer);
+	close_f(from);
+	close_f(to);
 
 	return (0);
 }
