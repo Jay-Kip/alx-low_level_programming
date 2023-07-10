@@ -3,6 +3,12 @@
 #include "main.h"
 void close_f(int fd);
 char *create_b(char *file);
+/**
+ * main - main function
+ * @argc: arguement count
+ * @argv: arguement vector
+ * Return: zero
+ */
 
 int main(int argc, char *argv[])
 {
@@ -20,7 +26,7 @@ int main(int argc, char *argv[])
 	b = read(f, a, 1024);
 	t = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	do{
+	do {
 		if (f == -1 || b == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -46,11 +52,16 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
-
+/**
+* create_b - funtion to create buffer
+* @file: file
+* Return: copy
+*/
 
 char *create_b(char *file)
 {
 	char *b;
+
 	b = malloc(sizeof(char) * 1024);
 
 	if (b == NULL)
@@ -60,6 +71,10 @@ char *create_b(char *file)
 	}
 	return (b);
 }
+/**
+ * * close_f - function to close file
+ * @fd: file descriptor to be closed
+ */
 
 
 void close_f(int fd)
