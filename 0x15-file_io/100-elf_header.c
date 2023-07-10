@@ -178,8 +178,9 @@ void prnt_osabi(unsigned char *e_ident)
 		case ELFOSABI_LINUX:
 			printf("UNIX-Linux\n");
 			break;
-		/*case ELFOSABI_SOLARIS:
-			printf("UNIX - Solaris\n");*/
+		case ELFOSABI_SOLARIS:
+			printf("UNIX - Solaris\n");
+			break;
 		case ELFOSABI_IRIX:
 			printf("UNIX - IRIX\n");
 			break;
