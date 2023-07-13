@@ -23,12 +23,12 @@ void close_elf(int elf);
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	Elf64_Ehdr *header;
-	int fd, r;
+	int fd, k;
 	
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, ":(Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
 	header = malloc(sizeof(Elf64_Ehdr));
@@ -38,8 +38,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-	r = read(fd, header, sizeof(Elf64_Ehdr));
-	if ( r == -1)
+	k = read(fd, header, sizeof(Elf64_Ehdr));
+	if ( k == -1)
 	{
 		free(header);
 		close_elf(fd);
