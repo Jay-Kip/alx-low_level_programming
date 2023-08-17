@@ -4,6 +4,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <elf.h>
+#include <errno.h>
 
 
 
@@ -20,15 +21,30 @@ void close_elf(int elf);
 
 
 
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	Elf64_Ehdr *header;
-	int fd, k;
+	int fd;
+	int k;
 	
 	fd = open(argv[1], O_RDONLY);
+
+	if (argc != 2)
+	{
+		printf("Requires two arguements\n");
+	}
+
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, ":(Error: Can't read file %s\n", argv[1]);
+		if (errno == ENOENT)
+		{
+			fprintf(stderr, "Error: File not found\n");
+		}
+		else
+			perror("Error opening file\n");
+		/*printf("Errno : %d\n", errno);*/
+		
+		/*dprintf(STDERR_FILENO, ":(Error: Can't read file %s\n", argv[1]);*/
 		exit(98);
 	}
 	header = malloc(sizeof(Elf64_Ehdr));
