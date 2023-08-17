@@ -6,13 +6,15 @@
  */
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *current = head;
-	dlistint_t *next;
+	dlistint_t *current_node;
+	dlistint_t *next_node;
 
-	while (current != NULL)
+	current_node = head;
+
+	while (current_node != NULL)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		next_node = current_node->next;
+		free(current_node);
+		current_node = next_node;
 	}
 }
