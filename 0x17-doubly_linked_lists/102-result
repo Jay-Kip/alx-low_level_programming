@@ -1,5 +1,9 @@
 #include "lists.h"
-
+/**
+* is_palindrome - checks if number is a palindrome
+* @num: number to bechecked if it is a palindrome
+* Return: number if is palindrome
+*/
 int is_palindrome(int num)
 {
 	int reversed = 0;
@@ -13,8 +17,10 @@ int is_palindrome(int num)
 	return original == reversed;
 }
 
-
-
+/**
+* largest_palindrome - checks for the largest palindrome
+* Return: largest palindrome
+*/
 
 int largest_palindrome()
 {
@@ -33,6 +39,10 @@ int largest_palindrome()
 	}
 	return largest_palindrome;
 }
+/**
+* main - main function
+* Return: zero
+*/
 int main()
 {
 	int result = largest_palindrome();
