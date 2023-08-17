@@ -49,7 +49,7 @@ int main()
 	FILE *file = fopen("102-result", "w");
 	if (file != NULL)
 	{
-		printf("%d\n", result);
+		printf("%d", result);
 		fclose(file);
 	}
 	return(0);
