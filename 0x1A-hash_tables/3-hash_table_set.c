@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-
 /**
  * hash_table_set - function that adds an element to the hash table
  * @ht: pointer to the hash table
@@ -15,17 +14,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
-
+	/*creates copy of the value*/
 	copy_val = strdup(value);
 	if (copy_val == NULL)
 		return (0);
-
+	/*calculates index of the key*/
 	j = key_index((const unsigned char *)key, ht->size);
-
+	/*iterate thro the linked list at the calculated index check if key exists*/
 	for (i = j; ht->array[i]; i++)
 	{
 		if (strcmp(ht->array[i]->key, key) == 0)
-		{
+		{ /*If key is found function updates by freeing existing val*/
 			free(ht->array[i]->value);
 			ht->array[i]->value = copy_val;
 			return (1);
