@@ -14,5 +14,9 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 
-clean:
-	rm -f $(OBJ)  $(NAME)
+oclean:
+	rm -f $(OBJ) $(NAME)
+
+fclean: clean clean
+
+re: oclean all
