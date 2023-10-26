@@ -1,4 +1,4 @@
-CC = -Wno-implicit-function-declaration
+CC = gcc
 SRC = main.c school.c
 
 school: main.o school.o
