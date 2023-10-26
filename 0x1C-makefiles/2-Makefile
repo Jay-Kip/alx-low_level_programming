@@ -5,3 +5,14 @@ NAME = school
 
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+
+
+#$(NAME): $(OBJ)
+#	$(CC) $(OBJ) -o $(NAME)
+
+
+#%.o: %.c
+#	$(CC) -c $< -o $@
+
+#clean:
+#	rm -f $(OBJ) $(NAME)
