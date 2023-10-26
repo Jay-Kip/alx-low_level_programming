@@ -2,12 +2,9 @@ CC = gcc
 SRC = main.c school.c
 
 school: main.o school.o
-	gcc main.o school.o -o school
+	$(CC) $(SRC: .c=.o) -o school
 
-main.o: main.c
-	gcc main.c
-
-school.o: school.c
-	gcc school.c
+%.o: %.c
+	$(CC) -c $<
 
 all: school
