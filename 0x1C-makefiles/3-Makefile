@@ -6,6 +6,7 @@ RM = rm -f
 
 all: $(NAME)
 
+
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
@@ -19,4 +20,4 @@ oclean:
 fclean: clean oclean
 
 
-re: fclean
+re: oclean all
