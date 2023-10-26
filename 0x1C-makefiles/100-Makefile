@@ -9,7 +9,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: $(NAME)
 
 
-$(NAME): $(OBJ)
+$(NAME): m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
@@ -22,10 +22,3 @@ fclean: clean oclean
 	@$(RM) $(NAME)
 
 re: fclean all
-
-$(OBJ): %.o: %.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-ifneq ($(wildcard m.h),)
-include m.h
-endif
